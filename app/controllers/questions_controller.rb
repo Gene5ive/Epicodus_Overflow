@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.question_author = current_user.user_name
     if @question.save
       flash[:notice] = "Your question has been saved."
       redirect_to questions_path

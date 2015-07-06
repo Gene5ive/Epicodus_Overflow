@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
+    @answer.answer_author = current_user.user_name
     if @question.save
       flash[:notice] = "Your answer has been saved."
       redirect_to question_path([@question.id])

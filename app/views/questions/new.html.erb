@@ -1,3 +1,9 @@
 <h1>Submit your question</h1>
 
-<%= render 'form' %>
+<% if current_user %>
+  <%= render 'form' %>
+<% else %>
+  <h3>You need to be logged in to ask a question.</h3>
+  <p><%= link_to "Log In", log_in_path %></p>
+  <p><%= link_to "Create an account", new_user_path %></p>
+<% end %>
