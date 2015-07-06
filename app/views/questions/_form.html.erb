@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @question do |f| %>
+  <%= f.text_field :question_title, label: "Enter your question" %>
+  <%= f.text_field :question_body, label: "Add any additional information here" %>
+  <%= f.text_field :question_author %>
+  <%= f.submit "Submit question" %>
+<% end %>

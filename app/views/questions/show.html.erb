@@ -1,0 +1,16 @@
+<h2><%= @question.question_title %></h2>
+<h4><%= @question.question_body %></h4>
+<h4><%= @question.question_author %><h4>
+
+<p><%= link_to "Edit question", edit_question_path(@question) %></p>
+
+<% if @question.answers.any? %>
+  <% @question.answers.each do |answer| %>
+    <p><%= answer.answer_body %></p>
+    <p><%= answer.answer_author %></p>
+  <% end %>
+<% else %>
+  <p>There are no answers to this question yet.</p>
+<% end %>
+
+<p><%= link_to "Add an answer", new_question_answer_path(@question, @answer) %></p>

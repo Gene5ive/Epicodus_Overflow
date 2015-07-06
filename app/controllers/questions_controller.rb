@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.order(:question_score)
+    @questions = Question.all
   end
 
   def new
@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(skill_params)
+    @question = Question.new(question_params)
     if @question.save
       flash[:notice] = "Your question has been saved."
       redirect_to questions_path

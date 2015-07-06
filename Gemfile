@@ -22,6 +22,8 @@ gem 'bootstrap_form'
 
 gem 'bcrypt', require: "bcrypt"
 
+gem 'rails_bootstrap_navbar'
+
 
 
 group :development do
