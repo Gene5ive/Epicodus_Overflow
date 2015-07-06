@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Welcome to Epicodus Overflow!"
-      redirect_to '/'
+      redirect_to log_in_path
     else
       flash[:alert] = "There was a problem creating your account."
       render :new
